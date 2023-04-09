@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/backend-1-config.iml" filepath="$PROJECT_DIR$/.idea/backend-1-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/catalog/catalog-service/catalog-service.iml" filepath="$PROJECT_DIR$/catalog/catalog-service/catalog-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/catalog/catalog-service/movie-service.iml" filepath="$PROJECT_DIR$/catalog/catalog-service/movie-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movie/movie-service/movie-service (1).iml" filepath="$PROJECT_DIR$/movie/movie-service/movie-service (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/serie-service/serie-service.iml" filepath="$PROJECT_DIR$/serie-service/serie-service.iml" />
+    </modules>
+  </component>
+</project>
