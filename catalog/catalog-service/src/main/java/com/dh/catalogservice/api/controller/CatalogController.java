@@ -3,6 +3,7 @@ package com.dh.catalogservice.api.controller;
 import com.dh.catalogservice.api.client.IMoviesServiceClient;
 import com.dh.catalogservice.domain.model.Movies;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +16,9 @@ import java.util.List;
 @RestController
 public class CatalogController {
 
+    @Autowired
     private final IMoviesServiceClient iMoviesServiceClient;
 
-    public CatalogController(IMoviesServiceClient iMoviesServiceClient) {
-        this.iMoviesServiceClient = iMoviesServiceClient;
-    }
 
     @GetMapping("/{catalog}")
     ResponseEntity<List<Movies>> getCatalog(@PathVariable String catalog) {

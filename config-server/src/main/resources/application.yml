@@ -8,6 +8,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/pabloejover/parcial-1-backend-1-terminado.git
+          uri: https://github.com/pabloejover/finalBackend1.git
           default-label: main
           search-paths: configuration
