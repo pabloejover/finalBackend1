@@ -1,4 +1,4 @@
-package com.dh.serieservice.model;
+package com.dh.serie.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,9 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
 import java.util.List;
-/**
- * @author vaninagodoy
- */
+import java.util.UUID;
 
 @Document(collection = "Series")
 @AllArgsConstructor
@@ -40,7 +38,7 @@ public class Serie {
         @Getter
         public static class Chapter {
 
-            private String name;
+          private String name;
             private Integer number;
             private String urlStream;
 
@@ -48,4 +46,5 @@ public class Serie {
         }
 
     }
+
 }

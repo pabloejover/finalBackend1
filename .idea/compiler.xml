@@ -8,15 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
-        <module name="serie-service" />
         <module name="movie-service (1)" />
         <module name="catalog-service" />
+        <module name="api-serie" />
         <module name="movie-service" />
         <module name="eureka-server" />
         <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-serie" target="17" />
       <module name="catalog-service" target="17" />
       <module name="config-server" target="17" />
       <module name="eureka-server" target="17" />
@@ -28,6 +29,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-serie" options="-parameters" />
       <module name="catalog-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />

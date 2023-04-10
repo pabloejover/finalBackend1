@@ -1,14 +1,10 @@
-package com.dh.serieservice.service;
+package com.dh.serie.service;
 
-import com.dh.serieservice.model.Serie;
-import com.dh.serieservice.repository.SerieRepository;
+import com.dh.serie.model.Serie;
+import com.dh.serie.repository.SerieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-/**
- * @author vaninagodoy
- */
 
 @Service
 public class SerieService {

@@ -1,18 +1,14 @@
-package com.dh.serieservice.controller;
+package com.dh.serie.controller;
 
-import com.dh.serieservice.model.Serie;
-import com.dh.serieservice.service.SerieService;
+import com.dh.serie.model.Serie;
+import com.dh.serie.service.SerieService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @author vaninagodoy
- */
-
 @RestController
-@RequestMapping("/series")
+@RequestMapping("/api/v1/series")
 public class SerieController {
 
     private final SerieService serieService;
@@ -37,4 +33,5 @@ public class SerieController {
         serieService.create(serie);
         return serie.getId();
     }
+
 }
