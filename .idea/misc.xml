@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/catalog/catalog-service/pom.xml" />
         <option value="$PROJECT_DIR$/eureka/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/catalog-service/pom.xml" />
       </list>
     </option>
   </component>

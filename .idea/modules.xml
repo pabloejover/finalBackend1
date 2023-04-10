@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/backend-1-config.iml" filepath="$PROJECT_DIR$/.idea/backend-1-config.iml" />
-      <module fileurl="file://$PROJECT_DIR$/catalog/catalog-service/catalog-service.iml" filepath="$PROJECT_DIR$/catalog/catalog-service/catalog-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/catalog-service/catalog-service.iml" filepath="$PROJECT_DIR$/catalog-service/catalog-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway/gateway.iml" />
