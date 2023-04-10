@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.ArrayList;
 import java.util.List;
 
-@FeignClient(name="http://localhost:8003/api/v1")
-@LoadBalancerClient(name = "http://localhost:8003/api/v1", configuration = LoadBalanceConfiguration.class)
+@FeignClient(name="serie-service")
+@LoadBalancerClient(name = "serie-service", configuration = LoadBalanceConfiguration.class)
 public interface SerieServiceClient {
 
-    @GetMapping("/series/{genre}")
+    @GetMapping("/api/v1/series/{genre}")
     List<SerieDTO> getSerieByGenre(@PathVariable String genre);
 
     @Getter

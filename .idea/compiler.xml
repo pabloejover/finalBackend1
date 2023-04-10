@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
-        <module name="movie-service (1)" />
         <module name="catalog-service" />
         <module name="api-serie" />
         <module name="movie-service" />

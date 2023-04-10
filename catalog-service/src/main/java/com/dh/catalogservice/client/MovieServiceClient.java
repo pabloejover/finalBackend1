@@ -19,7 +19,7 @@ import java.util.List;
 @LoadBalancerClient(name = "movie-service", configuration = LoadBalanceConfiguration.class)
 public interface MovieServiceClient {
 
-    @GetMapping("/movies/{genre}")
+    @GetMapping("/api/v1/movies/{genre}")
     List<MovieDTO> getMovieByGenre(@PathVariable(value = "genre") String genre);
 
     @Getter
