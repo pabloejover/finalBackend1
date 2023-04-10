@@ -15,7 +15,7 @@ import java.util.List;
  * @author vaninagodoy
  */
 
-@FeignClient(name="movie-service")
+@FeignClient(name="movie-service",url = "http://localhost:8001")
 @LoadBalancerClient(name = "movie-service", configuration = LoadBalanceConfiguration.class)
 public interface MovieServiceClient {
 

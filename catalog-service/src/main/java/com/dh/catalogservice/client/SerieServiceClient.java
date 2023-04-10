@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.ArrayList;
 import java.util.List;
 
-@FeignClient(name="serie-service")
+@FeignClient(name="serie-service",url = "http://localhost:8003")
 @LoadBalancerClient(name = "serie-service", configuration = LoadBalanceConfiguration.class)
 public interface SerieServiceClient {
 

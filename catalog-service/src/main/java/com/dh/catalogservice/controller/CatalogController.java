@@ -34,19 +34,36 @@ public class CatalogController {
 //        return ResponseEntity.ok(movieServiceClient.getMovieByGenre(genre));
 //    }
 
-    @GetMapping("/{genre}")
-    MovieSerieDTO getSerieByGenre (@PathVariable String genre){
+    @GetMapping("/series/{genre}")
+    SerieDTO getSerieByGenre (@PathVariable String genre){
+
+        List<SerieServiceClient.SerieDTO> serie = serieServiceClient.getSerieByGenre(genre);
+        SerieDTO serieDTO = new SerieDTO(serie);
+        return serieDTO;
+    }
+
+    @GetMapping("/movies/{genre}")
+    MovieDTO getMovieByGenre (@PathVariable String genre){
 
         List<MovieServiceClient.MovieDTO> movie = movieServiceClient.getMovieByGenre(genre);
-        List<SerieServiceClient.SerieDTO> serie = serieServiceClient.getSerieByGenre(genre);
-        MovieSerieDTO movieSerieDTO = new MovieSerieDTO(movie,serie);
-        return movieSerieDTO;
+
+        MovieDTO movieDTO = new MovieDTO(movie);
+        return movieDTO;
     }
+    
     @Getter
     @Setter
     @Builder
-    static class MovieSerieDTO{
-        private List<MovieServiceClient.MovieDTO> movies;
+    static class SerieDTO{
         private List<SerieServiceClient.SerieDTO> series;
     }
+
+    @Getter
+    @Setter
+    @Builder
+    static class MovieDTO{
+        private List<MovieServiceClient.MovieDTO> movies;
+
+    }
+
 }
