@@ -1,4 +1,4 @@
-package com.dh.serie.service;
+package com.dh.serie.api.service;
 
 import com.dh.serie.model.Serie;
 import com.dh.serie.repository.SerieRepository;

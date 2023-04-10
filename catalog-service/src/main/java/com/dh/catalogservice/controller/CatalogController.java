@@ -2,14 +2,16 @@ package com.dh.catalogservice.controller;
 
 import com.dh.catalogservice.client.MovieServiceClient;
 import com.dh.catalogservice.client.SerieServiceClient;
+import com.dh.catalogservice.domain.model.Movie;
+import com.dh.catalogservice.domain.model.Serie;
+import com.dh.catalogservice.queue.MovieSender;
+import com.dh.catalogservice.queue.SerieSender;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,21 +20,23 @@ import java.util.List;
  */
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/catalog")
 public class CatalogController {
+
+    private final MovieSender movieSender;
+    private final SerieSender serieSender;
 
     private final MovieServiceClient movieServiceClient;
     private final SerieServiceClient serieServiceClient;
 
-    public CatalogController(MovieServiceClient movieServiceClient, SerieServiceClient serieServiceClient) {
+    public CatalogController(MovieServiceClient movieServiceClient, SerieServiceClient serieServiceClient, MovieSender movieSender, SerieSender serieSender) {
         this.movieServiceClient = movieServiceClient;
         this.serieServiceClient = serieServiceClient;
-    }
+        this.movieSender = movieSender;
+        this.serieSender = serieSender;
 
-//    @GetMapping("/{genre}")
-//    ResponseEntity<List<MovieServiceClient.MovieDto>> getGenre(@PathVariable String genre) {
-//        return ResponseEntity.ok(movieServiceClient.getMovieByGenre(genre));
-//    }
+    }
 
     @GetMapping("/series/{genre}")
     SerieDTO getSerieByGenre (@PathVariable String genre){
@@ -50,7 +54,7 @@ public class CatalogController {
         MovieDTO movieDTO = new MovieDTO(movie);
         return movieDTO;
     }
-    
+
     @Getter
     @Setter
     @Builder
@@ -65,5 +69,13 @@ public class CatalogController {
         private List<MovieServiceClient.MovieDTO> movies;
 
     }
+    @PostMapping("/movies/salvar")
+    public void saveMovie(@RequestBody Movie movie) {
+        movieSender.send(movie);
+    }
+
+    @PostMapping("/series/salvar")
+    public void saveSerie(@RequestBody Serie serie) {serieSender.send(serie);    }
+
 
 }

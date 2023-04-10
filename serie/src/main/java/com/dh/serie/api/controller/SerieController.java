@@ -1,7 +1,7 @@
-package com.dh.serie.controller;
+package com.dh.serie.api.controller;
 
+import com.dh.serie.api.service.SerieService;
 import com.dh.serie.model.Serie;
-import com.dh.serie.service.SerieService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

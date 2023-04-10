@@ -2,6 +2,7 @@ package com.dh.serie;
 
 import com.dh.serie.model.Serie;
 import com.dh.serie.repository.SerieRepository;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 @SpringBootApplication
-
+@EnableRabbit
 public class SerieApplication {
 
 	public static void main(String[] args) {

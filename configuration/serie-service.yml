@@ -1,6 +1,10 @@
 server:
   port: 8003
 
+queue:
+  serie:
+    name: NewSerieQueue
+
 spring:
   mongodb:
     embedded:
