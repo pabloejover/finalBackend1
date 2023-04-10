@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @SpringBootApplication
-@EnableMongoRepositories
+
 public class SerieApplication {
 
 	public static void main(String[] args) {
