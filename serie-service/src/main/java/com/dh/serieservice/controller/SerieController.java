@@ -1,7 +1,7 @@
-package com.example.serieservice.controller;
+package com.dh.serieservice.controller;
 
-import com.example.serieservice.model.Serie;
-import com.example.serieservice.service.SerieService;
+import com.dh.serieservice.model.Serie;
+import com.dh.serieservice.service.SerieService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/api/v1/series")
+@RequestMapping("/series")
 public class SerieController {
 
     private final SerieService serieService;

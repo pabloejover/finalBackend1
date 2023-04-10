@@ -1,7 +1,7 @@
-package com.example.serieservice.service;
+package com.dh.serieservice.service;
 
-import com.example.serieservice.model.Serie;
-import com.example.serieservice.repository.SerieRepository;
+import com.dh.serieservice.model.Serie;
+import com.dh.serieservice.repository.SerieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
