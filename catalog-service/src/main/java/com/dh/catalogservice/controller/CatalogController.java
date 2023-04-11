@@ -4,13 +4,10 @@ import com.dh.catalogservice.client.MovieServiceClient;
 import com.dh.catalogservice.client.SerieServiceClient;
 import com.dh.catalogservice.domain.model.Movie;
 import com.dh.catalogservice.domain.model.Serie;
-import com.dh.catalogservice.queue.MovieSender;
-import com.dh.catalogservice.queue.SerieSender;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

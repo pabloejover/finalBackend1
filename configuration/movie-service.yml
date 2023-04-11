@@ -27,6 +27,9 @@ spring:
       enabled: true
       path: /h2-console
 
+  zipkin:
+    baseUrl: http://localhost:9411/
+
 message: hello from movie-service
 
 management:

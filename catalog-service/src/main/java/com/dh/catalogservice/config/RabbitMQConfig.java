@@ -1,5 +1,8 @@
-package com.dh.serie.core.config;
+package com.dh.catalogservice.config;
 
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -9,13 +12,31 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-public class RabbitMQSerieSenderConfig {
-
-    public static final String TOPIC_SERIE_LOAD = "com.dh.backend.serieload";
+public class RabbitMQConfig {
 
     @Bean
     public TopicExchange appExchange() {
-        return new TopicExchange("BackExch");
+        return new TopicExchange("backendExchage");
+    }
+
+    @Bean
+    public Queue queueMovie() {
+        return new Queue("NewMovie");
+    }
+
+    @Bean
+    public Queue queueSerie() {
+        return new Queue("NewSerie");
+    }
+
+    @Bean
+    public Binding bindingMovieCreated() {
+        return BindingBuilder.bind(queueMovie()).to(appExchange()).with("com.dh.backend.moviecreated");
+    }
+
+    @Bean
+    public Binding bindingSerieCreated() {
+        return BindingBuilder.bind(queueSerie()).to(appExchange()).with("com.dh.backend.seriecreated");
     }
 
     @Bean
@@ -29,4 +50,7 @@ public class RabbitMQSerieSenderConfig {
     public Jackson2JsonMessageConverter producerJackson2MessageConverter() {
         return new Jackson2JsonMessageConverter();
     }
+
+
+
 }

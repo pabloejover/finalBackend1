@@ -16,6 +16,9 @@ spring:
 aplication:
   name: serie-service
 
+  zipkin:
+    baseUrl: http://localhost:9411/
+
 eureka:
   client:
     service-url:
