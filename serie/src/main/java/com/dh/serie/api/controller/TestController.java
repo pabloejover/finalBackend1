@@ -6,14 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RefreshScope
-@RestController
-public class TestController {
-    @Value("${message}")
-    private String message;
 
-    @RequestMapping("/message")
-    ResponseEntity<String> getMessage() {
-        return ResponseEntity.ok().body(this.message);
-    }
+public class TestController {
+
 }

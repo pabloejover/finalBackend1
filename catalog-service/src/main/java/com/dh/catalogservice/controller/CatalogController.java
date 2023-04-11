@@ -17,21 +17,21 @@ import java.util.List;
  */
 
 @RestController
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @RequestMapping("/catalog")
 public class CatalogController {
 
-    private final MovieSender movieSender;
-    private final SerieSender serieSender;
+//    private final MovieSender movieSender;
+//    private final SerieSender serieSender;
 
     private final MovieServiceClient movieServiceClient;
     private final SerieServiceClient serieServiceClient;
 
-    public CatalogController(MovieServiceClient movieServiceClient, SerieServiceClient serieServiceClient, MovieSender movieSender, SerieSender serieSender) {
+    public CatalogController(MovieServiceClient movieServiceClient, SerieServiceClient serieServiceClient/*,MovieSender movieSender, SerieSender serieSender*/) {
         this.movieServiceClient = movieServiceClient;
         this.serieServiceClient = serieServiceClient;
-        this.movieSender = movieSender;
-        this.serieSender = serieSender;
+//        this.movieSender = movieSender;
+//        this.serieSender = serieSender;
 
     }
 
@@ -66,13 +66,13 @@ public class CatalogController {
         private List<MovieServiceClient.MovieDTO> movies;
 
     }
-    @PostMapping("/movies/salvar")
-    public void saveMovie(@RequestBody Movie movie) {
-        movieSender.send(movie);
-    }
-
-    @PostMapping("/series/salvar")
-    public void saveSerie(@RequestBody Serie serie) {serieSender.send(serie);    }
+//    @PostMapping("/movies/salvar")
+//    public void saveMovie(@RequestBody Movie movie) {
+//        movieSender.send(movie);
+//    }
+//
+//    @PostMapping("/series/salvar")
+//    public void saveSerie(@RequestBody Serie serie) {serieSender.send(serie);    }
 
 
 }

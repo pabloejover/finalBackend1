@@ -8,11 +8,14 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
+
 public class SerieSender {
+
     private final RabbitTemplate rabbitTemplate;
 
-    private final Queue serieQueue;
+    public SerieSender(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
 
     public void send(Serie serie) {
 

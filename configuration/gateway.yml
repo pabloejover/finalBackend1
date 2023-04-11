@@ -14,14 +14,7 @@ spring:
           uri: lb://catalog-service
           predicates:
             - Path=/api/v1/catalog/**
-        - id: msmovie
-            uri: lb://movie-service
-            predicates:
-              - Path=/api/v1/movies/**
-        - id: msserie
-            uri: lb://serie
-            predicates:
-              - Path=/api/v1/series/**
+
   zipkin:
     baseUrl: http://localhost:9411/
 

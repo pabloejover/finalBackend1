@@ -8,12 +8,14 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@RequiredArgsConstructor
+
 public class MovieSender {
 
     private final RabbitTemplate rabbitTemplate;
 
-    private final Queue movieQueue;
+    public MovieSender(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
 
     public void send(Movie movie) {
 
